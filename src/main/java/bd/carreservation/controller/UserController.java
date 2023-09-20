@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import bd.carreservation.model.User;
 import bd.carreservation.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = { "http://localhost:3000", "https://bucolic-jalebi-fdd059.netlify.app" })
 @RestController
 @RequestMapping("/api/v1/")
 public class UserController {

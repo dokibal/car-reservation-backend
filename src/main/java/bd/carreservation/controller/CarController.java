@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import bd.carreservation.model.Car;
 import bd.carreservation.service.CarService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = { "http://localhost:3000", "https://bucolic-jalebi-fdd059.netlify.app" })
 @RestController
 @RequestMapping("/api/v1/")
 public class CarController {
