@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,13 +35,17 @@ public class CarController {
 
 	@PostMapping("/car")
 	public ResponseEntity<Car> addCar(@RequestBody Car car) {
-		System.out.println(car);
 		return ResponseEntity.ok(carService.addCar(car));
 	}
 
 	@PutMapping("/car/{id}")
 	public ResponseEntity<Car> updateCar(@PathVariable Long id, @RequestBody Car car) {
-		System.out.println(car);
 		return ResponseEntity.ok(carService.updateCar(id, car));
+	}
+
+	@DeleteMapping("/cars/{id}")
+	public ResponseEntity<Boolean> removeCar(@PathVariable Long id) {
+		carService.removeCar(id);
+		return ResponseEntity.ok(Boolean.TRUE);
 	}
 }

@@ -10,4 +10,6 @@ public interface CarService {
 	public Car addCar(Car car);
 
 	public Car updateCar(Long id, Car car);
+
+	public void removeCar(Long id);
 }

@@ -30,6 +30,11 @@ public class ReservationController {
 		this.reservationService = reservationService;
 	}
 
+	@GetMapping("wakeup")
+	public ResponseEntity<Boolean> wakeUp() {
+		return ResponseEntity.ok(true);
+	}
+
 	@GetMapping("/reservations")
 	public ResponseEntity<List<Reservation>> getReservations(
 			@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,

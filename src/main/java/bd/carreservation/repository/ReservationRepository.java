@@ -18,4 +18,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	@Query("SELECT r FROM Reservation r WHERE (r.startDate >= :startDate AND r.endDate <= :endDate AND r.car.Id = :carId) ORDER BY startDate DESC")
 	List<Reservation> findReservationByDateByCar(@Param("startDate") LocalDateTime startDate,
 			@Param("endDate") LocalDateTime endDate, @Param("carId") long carId);
+
+	@Query("SELECT r FROM Reservation r WHERE r.car.Id = :carId ORDER BY startDate DESC")
+	List<Reservation> findReservationByCar(@Param("carId") long carId);
 }
