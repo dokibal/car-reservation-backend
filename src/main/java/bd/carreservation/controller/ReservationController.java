@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import bd.carreservation.model.Reservation;
 import bd.carreservation.service.ReservationService;
 
-@CrossOrigin(origins = { "http://localhost:3000", "https://bucolic-jalebi-fdd059.netlify.app" })
+@CrossOrigin(origins = { "http://localhost:3000", "https://bucolic-jalebi-fdd059.netlify.app",
+		"https://doktorbalazs.hu" })
 @RestController
 @RequestMapping("/api/v1/")
 public class ReservationController {
@@ -30,7 +31,7 @@ public class ReservationController {
 		this.reservationService = reservationService;
 	}
 
-	@GetMapping("wakeup")
+	@GetMapping("/wakeup")
 	public ResponseEntity<Boolean> wakeUp() {
 		return ResponseEntity.ok(true);
 	}
